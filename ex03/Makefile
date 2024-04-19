@@ -1,7 +1,7 @@
 CXX				= c++
 CXXFLAGS			= -Wall -Wextra -Werror -std=c++98
 RM				= rm -fr
-INC				= -I includes/*.hpp
+INC				= 
 NAME			= NowItsWeird!
 
 SOURCES			= main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp

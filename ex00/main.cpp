@@ -13,6 +13,7 @@ int main(){
 	Ct.beRepaired(5);
 	Ct.takeDamage(10);
 	Ct.attack("some ClapTrap");
+	Ct.info();
 	Ct.beRepaired(17);
 	Ct.info();
 	for (int i = 0; i < 8; i++)

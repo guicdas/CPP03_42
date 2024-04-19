@@ -20,11 +20,11 @@ fclean:			clean
 
 re:				fclean $(NAME)
 
-exe:
+x:
 	clear
 	@$(RM) $(SOURCES_O)
 	@$(RM) $(NAME)
 	@$(CXX) $(CXXFLAGS) $(INC) $(SOURCES) -o $(NAME)
 	@./$(NAME)
 
-.PHONY:			all clean fclean re exe
+.PHONY:			all clean fclean re x

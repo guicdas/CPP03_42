@@ -1,4 +1,4 @@
-#include "includes/ClapTrap.hpp"
+#include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap() : hitPoints(10), name(""), energyPoints(10), attackDamage(0){
 	std::cout << "A ClapTrap was created!\n";

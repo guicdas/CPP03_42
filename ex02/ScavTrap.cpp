@@ -1,4 +1,4 @@
-#include "includes/ScavTrap.hpp"
+#include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap( std::string name ) : ClapTrap(name){
 	std::cout << "ScavTrap " << this->name << " was created!\n";

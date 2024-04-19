@@ -1,5 +1,5 @@
-#include "includes/ClapTrap.hpp"
-#include "includes/ScavTrap.hpp"
+#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main(){
 	ClapTrap Ct("gui");
@@ -10,6 +10,7 @@ int main(){
 	St.takeDamage(5);
 	St.beRepaired(5);
 	St.takeDamage(100);
+	St.info();
 	St.beRepaired(17);
 	St.info();
 	for (int i = 0; i < 48; i++)

@@ -9,7 +9,7 @@ ClapTrap::ClapTrap(std::string name) : hitPoints(10), name(name), energyPoints(1
 }
 
 ClapTrap::~ClapTrap(){
-	std::cout << "ClapTrap " << this->name << " was destroyed!\n"
+	std::cout << "ClapTrap " << this->name << " was destroyed!\n";
 }
 
 ClapTrap::ClapTrap( ClapTrap const &n){
@@ -17,7 +17,7 @@ ClapTrap::ClapTrap( ClapTrap const &n){
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& n)
-{
+{	
     if (this != &n)
     {
         name = n.name;
@@ -61,9 +61,9 @@ void	ClapTrap::beRepaired(unsigned int amount){
 	else if (this->energyPoints == 0 && this->hitPoints == 0)
 		std::cout << "ClapTrap has neither energy nor hitPoints left to be repaired!\n";
 	else if (this->energyPoints == 0)
-		std::cout << "ClapTrap has no energy to  be repaired!\n";
+		std::cout << "ClapTrap has no energy to be repaired!\n";
 	else
-		std::cout << "ClapTrap has no hitPoints to  be repaired!\n";
+		std::cout << "ClapTrap has no hitPoints to be repaired!\n";
 }
 
 void ClapTrap::info( void ) const{
