@@ -1,5 +1,5 @@
 CXX				= c++
-CXXFLAGS		= -Wall -Wextra -Werror -std=c++98
+CXXFLAGS		= -Wall -Wextra -Werror -std=c++98 -fsanitize=address
 RM				= rm -fr
 INC				= -I ClapTrap.hpp -I ScavTrap.hpp
 NAME			= SerenaMyLove!

@@ -6,16 +6,13 @@
 
 class FragTrap: public ClapTrap
 {
-	private:
-
 	public:
-		FragTrap();
-		FragTrap( std::string name);
-		FragTrap(const FragTrap &n);
-		FragTrap& operator=(const FragTrap &n);
-		~FragTrap();
+		FragTrap( void );
+		FragTrap( std::string );
+		FragTrap( FragTrap const & );
+		FragTrap& operator=( FragTrap const & );
+		~FragTrap( void );
 
-		void	highFivesGuys( void );
-
-		void  info( void ) const;
+	void	highFivesGuys( void );
+	void	info( void ) const;
 };

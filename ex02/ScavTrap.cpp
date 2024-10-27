@@ -13,18 +13,13 @@ ScavTrap::ScavTrap( ScavTrap const &n) {
 	*this = n;
 }
 
-ScavTrap& ScavTrap::operator=(const ScavTrap& n)
+ScavTrap& ScavTrap::operator=( ScavTrap const &n )
 {
 	std::cout << "ScavTrap " << this->name << " copy assignment operator called!\n";
-    if (this != &n)
-    {
-        name = n.name;
-        hitPoints = n.hitPoints;
-        energyPoints = n.energyPoints;
-        attackDamage = n.attackDamage;
-		mode = n.mode;
-    }
-    return *this;
+	if (this != &n)
+		return (*this);
+	mode = n.mode;
+	return (*this);
 }
 
 ScavTrap::ScavTrap( void ) : ClapTrap(){
@@ -35,11 +30,11 @@ ScavTrap::ScavTrap( void ) : ClapTrap(){
 	this->mode = 0;
 }
 
-ScavTrap::~ScavTrap(){
+ScavTrap::~ScavTrap( void ){
 	std::cout << "ScavTrap " << this->name << " was destroyed!\n";
 }
 
-void	ScavTrap::attack(const std::string& target){
+void	ScavTrap::attack( std::string const &target ){
 	if (this->energyPoints > 0 && this->hitPoints > 0)
 	{
 		std::cout << "ScavTrap " << this->name << " attacks " << target << " causing " << this->attackDamage << " points of damage!\n";
@@ -53,7 +48,7 @@ void	ScavTrap::attack(const std::string& target){
 		std::cout << "ScavTrap has no hitPoints to attack " << target << "!\n";
 }
 
-void ScavTrap::guardGate(){
+void	ScavTrap::guardGate( void ){
 	if (this->mode == 0)
 	{
 		std::cout << "ScavTrap " << this->name << " entered GateKeeper mode!\n";
@@ -66,7 +61,7 @@ void ScavTrap::guardGate(){
 	}
 }
 
-void ScavTrap::info( void ) const{
+void	ScavTrap::info( void ) const{
 	std::cout << "\nScavTrap " << this->name << "'s info:\n";
 	std::cout << "Hit Points:\t" << this->hitPoints << std::endl;
 	std::cout << "Energy Points:\t" << this->energyPoints << std::endl;

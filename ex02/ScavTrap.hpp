@@ -7,17 +7,16 @@
 class ScavTrap : public ClapTrap
 {
 	private:
-		int mode;
+		int	mode;
+
 	public:
 		ScavTrap( void );
-		ScavTrap( std::string name );
-		ScavTrap( const ScavTrap &n);
-		ScavTrap& operator=(const ScavTrap &N);
+		ScavTrap( std::string );
+		ScavTrap(  ScavTrap const & );
+		ScavTrap& operator=( ScavTrap const & );
 		~ScavTrap( void );
 
-		void	attack(const std::string& target);
-
-		void	guardGate(void);
-
-		void	info(void) const;
+	void	attack( std::string const & );
+	void	guardGate( void );
+	void	info( void ) const;
 };

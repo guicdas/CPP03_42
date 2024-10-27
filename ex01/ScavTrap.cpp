@@ -1,26 +1,38 @@
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap() : ClapTrap() {
-	std::cout << "A ScavTrap was created!\n";
+ScavTrap::ScavTrap( void ) : ClapTrap() {
 	this->hitPoints = 100;
 	this->energyPoints = 50;
 	this->attackDamage = 20;
 	this->mode = 0;
+	std::cout << "A ScavTrap was created!\n";
 }
 
 ScavTrap::ScavTrap( std::string name ) : ClapTrap(name){
-	std::cout << "ScavTrap " << this->name << " was created!\n";
 	this->hitPoints = 100;
 	this->energyPoints = 50;
 	this->attackDamage = 20;
 	this->mode = 0;
+	std::cout << "ScavTrap " << this->name << " was created!\n";
 }
 
-ScavTrap::~ScavTrap(){
+ScavTrap::ScavTrap( ScavTrap const &s ){
+	*this = s;
+}
+
+ScavTrap& ScavTrap::operator=( ScavTrap const &s )
+{
+	if (this != &s)
+		return (*this);
+	name = s.mode;
+	return (*this);
+}
+
+ScavTrap::~ScavTrap( void ){
 	std::cout << "ScavTrap " << this->name << " was destroyed!\n";
 }
 
-void ScavTrap::guardGate(){
+void	ScavTrap::guardGate( void ){
 	if (this->mode == 0)
 	{
 		std::cout << "ScavTrap " << this->name << " entered GateKeeper mode!\n";
@@ -33,7 +45,7 @@ void ScavTrap::guardGate(){
 	}
 }
 
-void	ScavTrap::attack(const std::string& target){
+void	ScavTrap::attack( std::string const &target ){
 	if (this->energyPoints > 0 && this->hitPoints > 0)
 	{
 		std::cout << "ScavTrap " << this->name << " attacks " << target << " causing " << this->attackDamage << " points of damage!\n";

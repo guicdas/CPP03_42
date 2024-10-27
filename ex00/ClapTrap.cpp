@@ -1,10 +1,10 @@
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap() : hitPoints(10), name(""), energyPoints(10), attackDamage(0){
+ClapTrap::ClapTrap( void ) : hitPoints(10), name(""), energyPoints(10), attackDamage(0){
 	std::cout << "A ClapTrap" << " was created!\n";
 }
 
-ClapTrap::ClapTrap(std::string name) : hitPoints(10), name(name), energyPoints(10), attackDamage(0){
+ClapTrap::ClapTrap( std::string name ) : hitPoints(10), name(name), energyPoints(10), attackDamage(0){
 	std::cout << "ClapTrap " << this->name << " was created!\n";
 }
 
@@ -12,23 +12,22 @@ ClapTrap::~ClapTrap(){
 	std::cout << "ClapTrap " << this->name << " was destroyed!\n";
 }
 
-ClapTrap::ClapTrap( ClapTrap const &n){
+ClapTrap::ClapTrap( ClapTrap const &n ){
 	*this = n;
 }
 
-ClapTrap& ClapTrap::operator=(const ClapTrap& n)
+ClapTrap	&ClapTrap::operator=( ClapTrap const &n )
 {	
-    if (this != &n)
-    {
-        name = n.name;
-        hitPoints = n.hitPoints;
-        energyPoints = n.energyPoints;
-        attackDamage = n.attackDamage;
-    }
-    return *this;
+	if (this != &n)
+		return *this;
+	name = n.name;
+	hitPoints = n.hitPoints;
+	energyPoints = n.energyPoints;
+	attackDamage = n.attackDamage;
+	return *this;
 }
 
-void	ClapTrap::attack(const std::string& target){
+void	ClapTrap::attack( std::string const &target ){
 	if (this->energyPoints > 0 && this->hitPoints > 0)
 	{
 		std::cout << "ClapTrap " << this->name << " attacks " << target << " causing " << this->attackDamage << " points of damage!\n";
@@ -42,7 +41,7 @@ void	ClapTrap::attack(const std::string& target){
 		std::cout << "ClapTrap has no hitPoints to attack " << target << "!\n";
 }
 
-void	ClapTrap::takeDamage(unsigned int amount){
+void	ClapTrap::takeDamage( unsigned int amount ){
 	std::cout << "ClapTrap " << this->name << " is hit with " << amount << " points of damage, ";
 	this->hitPoints -= amount;
 	if (this->hitPoints <= 0)
@@ -51,7 +50,7 @@ void	ClapTrap::takeDamage(unsigned int amount){
 		std::cout << "and has " << this->hitPoints << " hitpoints left!\n";
 }
 
-void	ClapTrap::beRepaired(unsigned int amount){
+void	ClapTrap::beRepaired( unsigned int amount ){
 	if (this->energyPoints > 0)
 	{
 		std::cout << "ClapTrap " << this->name << " repairs itself for " << amount << " hitpoints.\n";

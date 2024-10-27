@@ -9,16 +9,16 @@ class ClapTrap{
 		std::string	name;
 		int			energyPoints;
 		int			attackDamage;
+
 	public:
 		ClapTrap( void );
-		ClapTrap(std::string name);
-		ClapTrap( ClapTrap const &n);
-		ClapTrap& operator=(const ClapTrap& n);
+		ClapTrap( std::string );
+		ClapTrap( ClapTrap const & );
+		ClapTrap& operator=( ClapTrap const & );
 		~ClapTrap( void );
 
-		void	attack(const std::string& target);
-		void	takeDamage(unsigned int amount);
-		void	beRepaired(unsigned int amount);
-
-		void	info( void ) const;
+	void	attack( std::string const & );
+	void	takeDamage( unsigned int );
+	void	beRepaired( unsigned int );
+	void	info( void ) const;
 };

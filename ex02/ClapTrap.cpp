@@ -21,14 +21,13 @@ ClapTrap::ClapTrap( ClapTrap const &n){
 ClapTrap& ClapTrap::operator=(const ClapTrap& n)
 {
 	std::cout << "ClapTrap " << this->name << " copy assignment operator called!\n";
-    if (this != &n)
-    {
-        name = n.name;
-        hitPoints = n.hitPoints;
-        energyPoints = n.energyPoints;
-        attackDamage = n.attackDamage;
-    }
-    return *this;
+	if (this != &n)
+		return (*this);
+	name = n.name;
+	hitPoints = n.hitPoints;
+	energyPoints = n.energyPoints;
+	attackDamage = n.attackDamage;
+	return (*this);
 }
 
 void	ClapTrap::attack(const std::string& target){
@@ -45,7 +44,7 @@ void	ClapTrap::attack(const std::string& target){
 		std::cout << "ClapTrap has no hitPoints to attack!\n";
 }
 
-void	ClapTrap::takeDamage(unsigned int amount){
+void	ClapTrap::takeDamage( unsigned int amount ){
 	std::cout << "ClapTrap " << this->name << " is hit with " << amount << " points of damage, ";
 	this->hitPoints -= amount;
 	if (this->hitPoints <= 0)
@@ -54,7 +53,7 @@ void	ClapTrap::takeDamage(unsigned int amount){
 		std::cout << "and has " << this->hitPoints << " hitPoints left!\n";
 }
 
-void	ClapTrap::beRepaired(unsigned int amount){
+void	ClapTrap::beRepaired( unsigned int amount ){
 	if (this->energyPoints > 0)
 	{
 		std::cout << "ClapTrap " << this->name << " repairs itself for " << amount << " hitpoints.\n";
